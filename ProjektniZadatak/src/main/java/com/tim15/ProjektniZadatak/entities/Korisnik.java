@@ -1,9 +1,10 @@
 package com.tim15.ProjektniZadatak.entities;
 
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class Korisnik {
 	
-	private int id;
 	private String ime;
 	private String prezime;
 	private String korisnickoIme;
@@ -17,10 +18,9 @@ public class Korisnik {
 		super();
 	}
 
-	public Korisnik(int id, String ime, String prezime, String korisnickoIme, String lozinka, String email, String pol,
+	public Korisnik(String ime, String prezime, String korisnickoIme, String lozinka, String email, String pol,
 			String adresa, String telefon) {
 		super();
-		this.id = id;
 		this.ime = ime;
 		this.prezime = prezime;
 		this.korisnickoIme = korisnickoIme;
@@ -31,13 +31,6 @@ public class Korisnik {
 		this.telefon = telefon;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getIme() {
 		return ime;
@@ -105,10 +98,11 @@ public class Korisnik {
 
 	@Override
 	public String toString() {
-		return "Korisnik [id=" + id + ", ime=" + ime + ", prezime=" + prezime + ", korisnickoIme=" + korisnickoIme
-				+ ", lozinka=" + lozinka + ", email=" + email + ", pol=" + pol + ", adresa=" + adresa + ", telefon="
-				+ telefon + "]";
+		return "Korisnik [ime=" + ime + ", prezime=" + prezime + ", korisnickoIme=" + korisnickoIme + ", lozinka="
+				+ lozinka + ", email=" + email + ", pol=" + pol + ", adresa=" + adresa + ", telefon=" + telefon + "]";
 	}
+
+	
 	
 	
 }
