@@ -19,6 +19,8 @@ public interface AdminService {
 	void obrisiJednog(Integer id);
 
 	Administrator napraviAdminaOdDTOPosta(AdminDTOPost adminDTO);
+	
+	Administrator azurirajAdminaOdDTOa(AdminDTO adminDTO);
 
 	List<AdminDTO> vratiSveKaoDTO();
 	
