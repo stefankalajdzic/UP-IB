@@ -1,13 +1,17 @@
-package com.tim15.ProjektniZadatak;
+package com.example.Clinic;
 
+import com.example.Clinic.model.Patient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjektniZadatakApplication {
+public class ClinicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjektniZadatakApplication.class, args);
+		SpringApplication.run(ClinicApplication.class, args);
+
+
 	}
+
 
 }
