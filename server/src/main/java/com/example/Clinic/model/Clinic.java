@@ -39,6 +39,7 @@ public class Clinic {
 
     private String lat;
 
+
     private String lng;
 
 }
