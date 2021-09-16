@@ -18,12 +18,12 @@ function getRefreshToken() {
   return localStorage.getItem("refreshToken");
 }
 
-function setToken(token) {
-  localStorage.setItem("token", token);
+function setToken(value) {
+  localStorage.setItem("token", value);
 }
 
-function setRefreshToken(token) {
-  localStorage.setItem("refreshToken", token);
+function setRefreshToken(value) {
+  localStorage.setItem("refreshToken", value);
 }
 
 function removeToken() {
@@ -39,7 +39,8 @@ function decodeToken(token) {
   }
 }
 
-function didTokenExpire(token) {
+function didTokenExpire(toke) {
+  const token = toke;
   const decodedToken = token ? decodeToken(token) : null;
   const expDate = new Date(decodedToken.exp * 1000);
   return decodedToken ? expDate < Date.now() : null;

@@ -10,7 +10,6 @@ import javax.validation.constraints.NotBlank;
 public class PatientRegisterDto {
     private Long id;
 
-    @NotBlank
     private String lbo;
 
     private boolean enabled = true;

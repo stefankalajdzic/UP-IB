@@ -1,12 +1,12 @@
 import axios from "axios";
-import { TokenService } from "../TokenService";
-import { AuthenticationService } from "../AuthenticationService";
+import { TokenService } from "./tokenService";
+import { AuthenticationService } from "./authenticationService";
 
-const axiosClient = axios.create({
+const httpClient = axios.create({
   baseURL: `${process.env.REACT_APP_SPRINTS_BACKEND_SERVER}`,
 });
 
-axiosClient.interceptors.request.use((config) => {
+httpClient.interceptors.request.use((config) => {
   const token = TokenService.getToken();
   const refreshToken = TokenService.getRefreshToken();
   console.log(refreshToken);
@@ -24,7 +24,7 @@ axiosClient.interceptors.request.use((config) => {
   return config;
 });
 
-axiosClient.interceptors.response.use(
+httpClient.interceptors.response.use(
   (response) => response,
   (error) => {
     const originalRequest = error.config;
@@ -61,4 +61,4 @@ axiosClient.interceptors.response.use(
   }
 );
 
-export default axiosClient;
+export default httpClient;
