@@ -20,12 +20,61 @@ const CustomNavbar = () => {
       Login
     </Nav.Link>
   );
+  const logoutLink = (
+    <Nav.Link key={key++} onClick={logoutClick} href="">
+      Logout
+    </Nav.Link>
+  );
+  const chandePassword = (
+    <Nav.Link key={key++} href="login">
+      Change password
+    </Nav.Link>
+  );
+  const doctorPatients = (
+    <Nav.Link key={key++} href="login">
+      Patient
+    </Nav.Link>
+  );
+  const doctorAppointments = (
+    <Nav.Link key={key++} href="login">
+      Calendar
+    </Nav.Link>
+  );
+  const myProfile = (
+    <Nav.Link key={key++} href="login">
+      My profile
+    </Nav.Link>
+  );
 
-  let elementRender = [];
+  let doctor = [];
+  doctor.push(logoutLink);
+  doctor.push(chandePassword);
+  doctor.push(doctorPatients);
+  doctor.push(doctorAppointments);
+  doctor.push(myProfile);
   console.log(TokenService.getToken());
+  let elementRender = [];
+  console.log(AuthenticationService.getRole());
   if (!TokenService.getToken()) {
     elementRender.push(registerElement);
     elementRender.push(loginElement);
+  }
+  if (TokenService.getToken()) {
+    const role = AuthenticationService.getRole();
+
+    role.forEach((rol) => {
+      if (rol == "PATIENT") {
+        // elementRender.push(...patient);
+      } else if (rol == "NURSE") {
+        // elementRender.push(...nurse);
+      } else if (rol == "DOCTOR") {
+        elementRender.push(...doctor);
+      } else if (rol == "CLINIC_ADMIN") {
+        // elementRender.push(...clinicAdmin);
+      } else if (rol == "CLINIC_CENTRE_ADMIN") {
+        // elementRender.push(...clinicCentreAdmin);
+      }
+    });
   }
 
   function getUniqueListBy(arr, key) {
@@ -36,7 +85,7 @@ const CustomNavbar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">Our clinic</Navbar.Brand>
-        {elementRender.map((element) => element)}
+        {getUniqueListBy(elementRender, "key")}
       </Navbar>
     </>
   );
