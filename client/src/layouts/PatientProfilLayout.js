@@ -61,6 +61,7 @@ const PatientProfilLayout = () => {
   };
 
   const changeInputHandler = (event, prop) => {
+    console.log(event.target.value);
     const person = {
       ...patient,
     };
@@ -68,6 +69,8 @@ const PatientProfilLayout = () => {
     const user = {
       ...patient.userDto,
     };
+
+    console.log(user);
 
     user[prop] = event.target.value;
 

@@ -23,9 +23,7 @@ import BlockUsers from "../layouts/BlockUsers";
 import UpdateStaff from "../layouts/UpdateStaff";
 import NewClinicAdmin from "../components/clinicCentreAdmin/NewClinicAdmin";
 import NewClinic from "../components/clinics/NewClinic";
-import PasswordLess from "../services/PasswordLessError";
 import RateTables from "../components/ratings/RateTables";
-import PasswordlessWithLink from "../services/PasswordlessWithLink";
 import LinkNotValid from "../layouts/LinkNotValid";
 import PatientAppointments from "../components/tables/PatientAppointments";
 import BussinesReports from "../layouts/BussinesReports";
@@ -41,8 +39,6 @@ function CustomRouter() {
       <Switch>
         <Route path="/register" exact component={RegisterLayout} />
         <Route path="/login" exact component={LoginLayout} />
-        <Route path="/magic/" component={PasswordLess} />
-        <Route path="/magicWithLink/" component={PasswordlessWithLink} />
         <Route path="/linkExpired" component={LinkNotValid} />
         {/*<Route path="/nursePage" exact component={NurseLayout}/>*/}
         <PrivateRoute

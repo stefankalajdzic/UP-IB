@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import ServicesTable from "../components/tables/ServicesTable";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
-import Location from "../components/Location";
 import { AppointmentService } from "../services/AppointmentService";
 import { ClinicService } from "../services/ClinicService";
 import { DoctorService } from "../services/DoctorService";
@@ -416,12 +415,6 @@ const ClinicProfile = () => {
 
           <div className="hospitalLocation">
             {/*<h3>Find us on maps:</h3>*/}
-
-            <Location
-              name={clinic.addressName}
-              lat={clinic.lat}
-              lng={clinic.lng}
-            ></Location>
           </div>
         </div>
       </div>
