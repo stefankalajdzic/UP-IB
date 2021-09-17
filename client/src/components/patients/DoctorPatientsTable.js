@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
-import MUIDataTable, { TableFilterList } from "mui-datatables";
-import { useHistory } from "react-router-dom";
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Tooltip,
-} from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
-import { AppointmentService } from "../../services/AppointmentService";
-import { PatientService } from "../../services/PatientService";
+import { Dialog, DialogActions, DialogContent } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import MUIDataTable from "mui-datatables";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { PatientService } from "../../services/PatientService";
 
 const DoctorPatientsTable = () => {
   const [open, setOpen] = React.useState(false);
